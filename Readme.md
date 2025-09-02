@@ -11,6 +11,10 @@ Repositorio demostrativo sobre como utilizar la API de n8n con python scripts. n
 - Soporte para múltiples plataformas 🌐.
 - Documentación completa 📖.
 - PostgresSQL como base de datos para n8n 🐘.
+- Python Script que:
+  - Se conecta a la api de n8n.
+  - Crea un workflow que obtiene datos de una api y los envía vía correo electrónico.
+  - Lista todos los workflows existentes.
 
 ## 📝 Requisitos Previos
 
