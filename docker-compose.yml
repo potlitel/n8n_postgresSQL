@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - NPM_PACKAGE=n8n-nodes-mailtrap #Interact with Mailtrap API
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=user
+      - N8N_BASIC_AUTH_PASSWORD=password
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=db
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8n
+      - NODE_FUNCTION_ALLOW_EXTERNAL=axios,qs
+      - N8N_EMAIL_MODE=smtp
+      - N8N_SMTP_HOST=smtp.mailtrap.io
+      - N8N_SMTP_PORT=2525
+      - N8N_SMTP_USER=tu_usuario_mailtrap
+      - N8N_SMTP_PASS=tu_contraseña_mailtrap
+      - N8N_SMTP_SENDER=remitente@tudominio.com
+      - N8N_SMTP_SSL=false
+      - N8N_SMTP_STARTTLS=true
+
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD=n8n
+      - POSTGRES_DB=n8n
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 1s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8280:8080
