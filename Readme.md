@@ -1,5 +1,11 @@
 # 🔥 Integración de API de n8n con python.
 
+<!-- Badges -->
+[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Downloads](https://img.shields.io/badge/downloads-100%2B-blue.svg)](#)
+
+
 ## ✍️ Descripción
 
 Repositorio demostrativo sobre como utilizar la API de n8n con python scripts. n8n tiene una API que permite a los desarrolladores interactuar con el sistema de automatización de procesos. Permite realizar diversas operaciones, como crear, actualizar y eliminar flujos de trabajo (workflows), así como gestionar credenciales y ejecutar flujos de trabajo de manera programática.
@@ -176,23 +182,23 @@ Si pip no está instalado, puedes instalarlo usando el script get-pip.py. Sigue 
 
 ## 📥 Uso del proyecto
 
-### Configuración de Credenciales SMTP en n8n para Gmail, puede usar también Mailtrap u otro de su preferencia.
+### 1. Configuración de Credenciales SMTP en n8n para Gmail, puede usar también Mailtrap u otro de su preferencia.
 
 Para crear credenciales SMTP en n8n y enviar correos con Gmail, sigue estos pasos clave basados en la documentación oficial de n8n:
 
-### Requisitos Previos
+#### 1.1 Requisitos Previos
 
 - Debes tener habilitada la verificación en dos pasos en tu cuenta de Gmail.
 - Genera una contraseña de aplicación (app password) para usar con n8n (esto es más seguro que usar tu contraseña principal).
 
-### Pasos para Crear la Credencial SMTP en n8n
+#### 1.2 Pasos para Crear la Credencial SMTP en n8n
 
 1. Entra a tu cuenta de Google y habilita la verificación en dos pasos si no lo has hecho ya.
 2. Ve a la sección de [**Contraseñas de aplicaciones**](https://myaccount.google.com/apppasswords) de Google.
 3. Genera una nueva contraseña para la aplicación, asignándole un nombre identificativo como `n8n credential`.
 4. Guarda esta contraseña, pues la necesitarás para la configuración en n8n.
 
-### Configuración en n8n (UI)
+#### 1.3 Configuración en n8n (UI)
 
 1. Ve a la sección de **Credenciales** en n8n.
 2. Crea una nueva credencial de tipo **Send Email**.
@@ -206,7 +212,21 @@ Para crear credenciales SMTP en n8n y enviar correos con Gmail, sigue estos paso
 
 Esta configuración garantiza que n8n utilice SMTP Gmail de forma segura y autorizada para enviar emails desde tus workflows.
 
-### Ejecución del script **basic_n8n.py**
+### 2. Levantar servicios con Docker Compose
+
+Para iniciar los servicios de **n8n** y **PostgreSQL** como soporte de base de datos, es necesario ejecutar el fichero `docker-compose.yml`. 
+
+Esto se hace con el siguiente comando:
+
+```bash
+    docker-compose up -d
+```
+
+Este comando levantará los contenedores configurados en el archivo, asegurando que ambos servicios estén operativos y correctamente conectados.
+
+### 3. Asegúrate de tener listos todos los [requisitos previos](#requisitos-previos) antes de continuar.
+
+### 4. Ejecución del script **basic_n8n.py**
 
 1. Desde una terminal, diríjase hacia la ubicación del proyecto.
 
@@ -241,9 +261,34 @@ Esta configuración garantiza que n8n utilice SMTP Gmail de forma segura y autor
     python basic_n8n.py
     ```
 
-## Contribuciones
+## 🤝 Contribuciones
 
-Pull requests are welcome! For any bug reports, please create an issue.
+¡Las contribuciones son bienvenidas! Si deseas ayudar a mejorar este proyecto, puedes hacerlo siguiendo estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama con tu feature o corrección: `git checkout -b nombre-de-tu-rama`
+3. Realiza tus cambios y realiza commits claros y descriptivos.
+4. Envía un pull request describiendo detalladamente tus modificaciones.
+
+Por favor, asegúrate de que tu código sigue las buenas prácticas, y si haces mejoras significativas, considera incluir pruebas o documentación adicional.
+
+---
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 🙏 Agradecimiento y contacto
+
+¡Gracias por visitar y usar este proyecto! ✨  
+Si tienes dudas, sugerencias o quieres contribuir, no dudes en abrir un issue 📥 o contactarme directamente:  
+
+- GitHub: [potlitel](https://github.com/potlitel) 👨‍💻  
+- Email: potlitel@gmail.com ✉️  
+
+¡Espero tus aportes y comentarios! 💬😊
 
 
 
