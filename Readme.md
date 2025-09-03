@@ -2,7 +2,7 @@
 
 ## ✍️ Descripción
 
-Repositorio demostrativo sobre como utilizar la API de n8n con python scripts. n8n tiene una API que permite a los desarrolladores interactuar con el sistema de automatización. Permite realizar diversas operaciones, como crear, actualizar y eliminar flujos de trabajo (workflows), así como gestionar credenciales y ejecutar flujos de trabajo de manera programática.
+Repositorio demostrativo sobre como utilizar la API de n8n con python scripts. n8n tiene una API que permite a los desarrolladores interactuar con el sistema de automatización de procesos. Permite realizar diversas operaciones, como crear, actualizar y eliminar flujos de trabajo (workflows), así como gestionar credenciales y ejecutar flujos de trabajo de manera programática.
 
 ## ✨Características
 
@@ -18,8 +18,13 @@ Repositorio demostrativo sobre como utilizar la API de n8n con python scripts. n
 
 ## 📝 Requisitos Previos
 
-- Asegúrate de tener n8n en funcionamiento y accesible.
-- Necesitarás un token de API para autenticarte.
+- Asegúrate de tener n8n en funcionamiento y accesible. Puedes utilizar como referencia la siguiente [guía](https://github.com/potlitel/n8n_ELK). 
+- Crear una Cuenta de Usuario
+  - #### Completar el formulario de configuración inicial:
+      ##### 1. Nombre de usuario (administrador)
+      ##### 2. Contraseña segura (mínimo 8 caracteres, incluyendo al menos un número y una letra mayúscula)
+      ##### 3. Correo electrónico válido para recuperación
+- Necesitarás un token de la API de n8n para autenticarte.
   - #### Crear una clave API
 
     ##### 1. Inicia sesión en n8n.
@@ -135,7 +140,7 @@ Si pip no está instalado, puedes instalarlo usando el script get-pip.py. Sigue 
 1. Clona el repositorio:
    
    ```bash
-   git clone https://github.com/robertolabarca/relsan-etl-download.git
+   git clone https://github.com/potlitel/n8n_ELK.git
    ```
 
 2. Navega al directorio del proyecto:
